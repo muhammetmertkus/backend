@@ -1,5 +1,5 @@
 # Web Framework
-fastapi==0.68.1
+fastapi>=0.95.0,<0.96.0
 uvicorn==0.15.0
 gunicorn==20.1.0
 python-multipart==0.0.6
@@ -8,20 +8,20 @@ python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 
 # Database
-SQLAlchemy==1.4.23
-alembic==1.7.1
+SQLAlchemy>=1.4.41,<1.5.0
+alembic>=1.8.1,<1.9.0
 
 # Face Recognition & Computer Vision
 dlib==19.24.0
 face-recognition==1.3.0
 deepface==0.0.79
-numpy==1.21.0
-Pillow==8.3.2
+numpy>=1.21.0,<1.22.0
+Pillow>=8.3.2,<8.4.0
 
 # Utils
 python-dotenv==1.0.0
-pydantic==2.4.2
-pydantic-settings==2.0.3
+pydantic>=1.9.0,<2.0.0
+pydantic-settings>=1.2.0,<2.0.0
 python-json-logger==2.0.2
 requests==2.26.0
 
