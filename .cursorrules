@@ -1,0 +1,73 @@
+# Yüz Tanıma ile Yoklama Sistemi Cursor Kuralları
+
+# Genel Kodlama Kuralları
+- Tüm dosyalar UTF-8 encoding kullanmalı
+- Satır sonları LF (Unix-style) olmalı
+- Her dosyanın sonunda boş bir satır olmalı
+- Maksimum satır uzunluğu 100 karakter
+- Girintiler için 4 boşluk kullanılmalı
+
+# Python Kuralları
+- PEP 8 stil kılavuzu takip edilmeli
+- Type hinting kullanılmalı
+- Docstring'ler Google formatında yazılmalı
+- f-string kullanımı tercih edilmeli
+- Sınıf isimleri PascalCase
+- Fonksiyon ve değişken isimleri snake_case
+- Sabitler SCREAMING_SNAKE_CASE
+
+# Veritabanı Kuralları
+- Tablo isimleri çoğul ve snake_case
+- Primary key'ler 'id' olarak isimlendirilmeli
+- Foreign key'ler 'table_name_id' formatında olmalı
+- Index isimleri 'idx_' prefix'i ile başlamalı
+- Tarih alanları için UTC timezone kullanılmalı
+
+# API Endpoint Kuralları
+- RESTful prensiplere uyulmalı
+- URL'ler küçük harf ve kebab-case
+- HTTP metodları doğru kullanılmalı
+- Versiyonlama /api/v1/ formatında olmalı
+- Response'lar JSON formatında olmalı
+
+# Güvenlik Kuralları
+- Hassas bilgiler environment variable'da saklanmalı
+- SQL injection'a karşı parameterized query kullanılmalı
+- Input validation yapılmalı
+- JWT token'lar için uygun expire time ayarlanmalı
+- Şifreler hash'lenerek saklanmalı
+
+# Test Kuralları
+- Her public metod için unit test yazılmalı
+- Test isimleri test_ prefix'i ile başlamalı
+- Mock data test/fixtures altında saklanmalı
+- Test coverage minimum %80 olmalı
+- Integration testler ayrı klasörde tutulmalı
+
+# Yüz Tanıma Spesifik Kuralları
+- Yüz görüntüleri JPEG formatında saklanmalı
+- Görüntü boyutu maksimum 800x800 pixel olmalı
+- Face encoding'ler JSON formatında saklanmalı
+- Duygu analizi sonuçları float tipinde olmalı
+- Confidence değeri 0.0-1.0 arasında olmalı
+
+# Loglama Kuralları
+- Log seviyeleri doğru kullanılmalı (INFO, ERROR, DEBUG)
+- Her log kaydında timestamp olmalı
+- Exception'lar detaylı loglanmalı
+- Hassas bilgiler loglanmamalı
+- Log rotasyonu yapılandırılmalı
+
+# Performans Kuralları
+- N+1 query problemi önlenmeli
+- Uygun yerlerde caching kullanılmalı
+- Büyük objelerde lazy loading yapılmalı
+- Görüntü işleme async olmalı
+- Bulk işlemler için batch processing kullanılmalı
+
+# Dokümantasyon Kuralları
+- Her modül için README.md olmalı
+- API endpoint'leri OpenAPI/Swagger ile dokümante edilmeli
+- Kod değişiklikleri CHANGELOG.md'de belirtilmeli
+- Environment variable'lar .env.example'da listelenmeli
+- Deployment adımları DEPLOYMENT.md'de açıklanmalı 

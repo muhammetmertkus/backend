@@ -1,0 +1,53 @@
+yoklama_sistemi/
+├── app/
+│   ├── __init__.py
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── auth.py
+│   │   ├── students.py
+│   │   ├── teachers.py
+│   │   ├── attendance.py
+│   │   └── reports.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── security.py
+│   │   └── database.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── user.py
+│   │   ├── student.py
+│   │   ├── teacher.py
+│   │   ├── course.py
+│   │   └── attendance.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── face_service.py
+│   │   ├── emotion_service.py
+│   │   ├── attendance_service.py
+│   │   └── email_service.py
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   ├── user.py
+│   │   ├── student.py
+│   │   └── attendance.py
+│   └── utils/
+│       ├── __init__.py
+│       ├── logger.py
+│       └── validators.py
+├── tests/
+│   ├── __init__.py
+│   ├── conftest.py
+│   ├── test_face_service.py
+│   └── test_attendance_service.py
+├── alembic/
+│   └── versions/
+├── logs/
+├── uploads/
+│   ├── faces/
+│   └── attendance/
+├── .env.example
+├── .gitignore
+├── alembic.ini
+├── requirements.txt
+└── run.py 
