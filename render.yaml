@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: face-recognition-attendance
+    env: docker
+    dockerfilePath: ./Dockerfile
+    region: frankfurt
+    plan: starter
+    branch: main
+    numInstances: 1
+    healthCheckPath: /api/v1/docs
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: DATABASE_URL
+        value: sqlite:///./attendance.db
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET_KEY
+        generateValue: true 
