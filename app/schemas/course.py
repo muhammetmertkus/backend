@@ -1,12 +1,13 @@
-from typing import Optional, List, Dict
-from pydantic import BaseModel, constr
+from typing import Optional, List, Dict, Annotated
+from pydantic import BaseModel, StringConstraints
 from datetime import datetime
+from .teacher import TeacherResponse
 
 class CourseBase(BaseModel):
     """Temel ders şeması."""
-    code: constr(min_length=3, max_length=20)
-    name: constr(min_length=3, max_length=100)
-    semester: constr(min_length=3, max_length=20)
+    code: Annotated[str, StringConstraints(min_length=3, max_length=20)]
+    name: Annotated[str, StringConstraints(min_length=3, max_length=100)]
+    semester: Annotated[str, StringConstraints(min_length=3, max_length=20)]
     schedule: Optional[Dict[str, List[str]]] = None
 
 class CourseCreate(CourseBase):
@@ -26,5 +27,10 @@ class CourseInDB(CourseBase):
     created_at: datetime
     updated_at: datetime
 
-    class Config:
-        orm_mode = True 
+    model_config = {
+        "from_attributes": True
+    }
+
+class CourseResponse(CourseInDB):
+    """Ders yanıt şeması."""
+    teacher: TeacherResponse 

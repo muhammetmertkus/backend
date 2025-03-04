@@ -9,6 +9,7 @@ from app.schemas.teacher import (
     TeacherUpdate,
     TeacherResponse
 )
+from app.schemas.course import CourseResponse
 from app.api.dependencies import get_current_admin_user
 from app.utils.logger import logger
 

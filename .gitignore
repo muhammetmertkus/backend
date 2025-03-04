@@ -23,6 +23,7 @@ wheels/
 # Virtual Environment
 venv/
 env/
+ENV/
 
 # IDE
 .idea/
@@ -31,7 +32,6 @@ env/
 *.swo
 
 # Logs
-logs/
 *.log
 
 # Database
@@ -42,19 +42,22 @@ logs/
 .env
 .env.*
 
-# Uploads
+# Media files
 uploads/
+media/
 
-# Coverage reports
+# Cache
+.cache/
+.pytest_cache/
 .coverage
 htmlcov/
 
-# Pytest
-.pytest_cache/
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
 
-# Alembic
-alembic/versions/__pycache__/
-
-# System
+# System files
 .DS_Store
 Thumbs.db 

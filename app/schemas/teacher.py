@@ -1,12 +1,11 @@
-from typing import Optional, List
-from pydantic import BaseModel, constr
+from typing import Optional, List, Annotated
+from pydantic import BaseModel, StringConstraints
 from .user import UserInDB
-from .course import CourseInDB
 
 class TeacherBase(BaseModel):
     """Temel öğretmen şeması."""
-    department: constr(min_length=2, max_length=100)
-    title: constr(min_length=2, max_length=50)
+    department: Annotated[str, StringConstraints(min_length=2, max_length=100)]
+    title: Annotated[str, StringConstraints(min_length=2, max_length=50)]
 
 class TeacherCreate(TeacherBase):
     """Öğretmen oluşturma şeması."""
@@ -22,10 +21,13 @@ class TeacherInDB(TeacherBase):
     id: int
     user_id: int
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
 
 class TeacherResponse(TeacherInDB):
     """Öğretmen yanıt şeması."""
     user: UserInDB
-    courses: List[CourseInDB] = [] 
+    courses: List["CourseInDB"] = []  # Forward reference kullanıyoruz
+
+from .course import CourseInDB  # Döngüsel import'u önlemek için en sona taşıdık 

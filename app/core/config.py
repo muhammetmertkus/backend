@@ -40,8 +40,10 @@ class Settings(BaseSettings):
     UPLOAD_DIR: Path = BASE_DIR / "uploads"
     MAX_CONTENT_LENGTH: int = 16 * 1024 * 1024  # 16MB
     
-    class Config:
-        case_sensitive = True
-        env_file = ".env"
+    model_config = {
+        "case_sensitive": True,
+        "env_file": ".env",
+        "extra": "allow"  # Ekstra değişkenlere izin ver
+    }
 
 settings = Settings() 
