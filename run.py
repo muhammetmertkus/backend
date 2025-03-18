@@ -1,13 +1,13 @@
-import uvicorn
+import os
 from app import create_app
-from app.core.config import settings
+from app.core.config import config
 
 app = create_app()
 
 if __name__ == "__main__":
-    uvicorn.run(
-        "run:app",
+    port = int(os.environ.get("PORT", 8000))
+    app.run(
         host="0.0.0.0",
-        port=8000,
-        reload=settings.DEBUG
+        port=port,
+        debug=config.DEBUG
     ) 
